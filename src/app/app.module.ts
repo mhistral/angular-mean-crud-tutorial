@@ -5,17 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddBookComponent } from './component/add-book/add-book.component';
 import { BookDetailComponent } from './component/book-detail/book-detail.component';
-import { BookListComponent } from './component/book-list/book-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BooksListComponent } from './component/books-list/books-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddBookComponent,
     BookDetailComponent,
-    BookListComponent
+    BooksListComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],
