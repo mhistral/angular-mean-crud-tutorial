@@ -41,4 +41,36 @@ export class CrudService {
          catchError(this.handleError)
       );
    }
+
+   // UPDATE
+   updateBook(id: any, data: any): Observable<any> {
+      let API_URL = `${this.REST_API}/update-book/${id}`;
+      return this.httpClient
+         .put(API_URL, data, { headers: this.httpHeaders })
+         .pipe(catchError(this.handleError));
+   }
+
+   // DELETE
+   deleteBook(id: any): Observable<any> {
+      let API_URL = `${this.REST_API}/delete-book/${id}`;
+      return this.httpClient
+         .delete(API_URL, { headers: this.httpHeaders })
+         .pipe(catchError(this.handleError));
+   }
+
+   // ERROR
+   handleError(error: HttpErrorResponse) {
+      let errorMessage = '';
+      if (error.error instanceof ErrorEvent) {
+         // HANDLE CLIENT ERROR
+         errorMessage = error.error.message;
+      } else {
+         // HANDLE SERVER ERROR
+         errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+      }
+      console.log(errorMessage);
+      return throwError(() => {
+         errorMessage;
+      });
+   }
 }
