@@ -1,29 +1,27 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { AddBookComponent } from './component/add-book/add-book.component';
-import { BookDetailComponent } from './component/book-detail/book-detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { BooksListComponent } from './component/books-list/books-list.component';
-
+import { AppRoutingModule } from './app-routing.module';
+import { AddBookComponent } from './components/add-book/add-book.component';
+import { BookDetailComponent } from './components/book-detail/book-detail.component';
+import { BooksListComponent } from './components/books-list/books-list.component';
 @NgModule({
-  declarations: [
-    AppComponent,
-    AddBookComponent,
-    BookDetailComponent,
-    BooksListComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    AppRoutingModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
+   declarations: [
+      AppComponent,
+      AddBookComponent,
+      BookDetailComponent,
+      BooksListComponent,
+   ],
+   imports: [
+      BrowserModule,
+      HttpClientModule,
+      FormsModule,
+      ReactiveFormsModule,
+      AppRoutingModule,
+   ],
+   providers: [],
+   bootstrap: [AppComponent],
 })
 export class AppModule {}
